@@ -1,10 +1,17 @@
-<nav-component [title]="title"></nav-component>
-<div class="ui grid">
-    
-        <div class="four wide column"></div>
-        <div class="eight wide column">
-            <teams-list></teams-list>
+
+<div class="ui page grid">
+    <div class="row">
+        <div class="column">
+            <nav-component [title]="title"></nav-component>
+            <div class="ui two column grid main-content">
+                <div class="four wide column">
+                    <side-nav></side-nav>
+                </div>
+                <div class="twelve wide column ">
+                    <content></content>
+                </div>
+            </div>
         </div>
-        <div class="four wide column"></div>
-    
+    </div>
 </div>
+
