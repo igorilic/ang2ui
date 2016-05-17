@@ -5,7 +5,7 @@ import { BreadcrumbComponent } from '../../shared/breadcrumbs/breadcrumbs.compon
     moduleId: module.id,
     selector: 'forma-test',
     templateUrl: 'formatest.component.html',
-    styleUrls: ['formatest.component.css']
+    styleUrls: ['formatest.component.css'],
     directives: [BreadcrumbComponent]
 })
 export class FormaTestComponent implements OnInit {
