@@ -6,6 +6,7 @@ import { IZadaci } from './shared/api/zadaci/zadaci.interface';
 import { ZadaciService } from './shared/api/zadaci/zadaci.service';
 import { SessionStorageService } from './shared/api/zadaci/sessionStorage.service';
 import { LoginService } from './login/login.service';
+import { IRadnik } from './shared/radnici/radnik';
 import { IRadnikLogin } from './shared/radnici/radnik-login.interface';
 
 
@@ -24,7 +25,8 @@ export class AppComponent implements OnInit{
         test: 'proba',
         ime: 'igor'
     };
-    radnikLogin: IRadnikLogin;
+    testRadnik: IRadnik;
+    radnikLogin: IRadnik;
     zadaci: IZadaci[];
     errorMessage: string;
     constructor(private _zadaciService: ZadaciService,
@@ -41,8 +43,13 @@ export class AppComponent implements OnInit{
             
         //  this._sessionStorageService
         //      .setToSessionStorage(this.objekat);
-             
-         this._loginService.postLogin('685', '685')
+        
+        /**
+         * Testiranje LoginService
+         */
+        //  this.testRadnik.SIFRA_RADNIKA = '685';
+        //  this.testRadnik.TAJNA_SIFRA = '685';    
+         this._loginService.postLogin({ SIFRA_RADNIKA : '685', TAJNA_SIFRA :'685'})
              .subscribe(
                  radnik => this.radnikLogin = radnik,
                  error => this.errorMessage = error
